@@ -17,7 +17,6 @@ function showForm(formType) {
   document.getElementById('form-wrapper').classList.remove('hidden');
   const selectedForm = document.getElementById('form-' + formType);
   selectedForm.classList.remove('hidden');
-  document.getElementById('form-title').textContent = formTitles[formType];
 
   // Reload iframe to fix display issues when switching between forms
   const iframe = selectedForm.querySelector('iframe');
