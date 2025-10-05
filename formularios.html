@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formularios - Canarias Avanza</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.canariasavanza.com/wp-content/uploads/2025/09/cropped-GESPROTUR-favicon-web-32x32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amarillo: '#FBBD14',
+            naranja: '#E8851E',
+            azul: '#009AD5',
+            azuloscuro: '#253777'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .form-container iframe {
+      min-height: 700px;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-azuloscuro to-azul text-white py-12">
+    <div class="w-full px-4 md:px-6">
+      <div class="w-full space-y-4">
+        <div class="bg-white bg-opacity-10 rounded-lg p-4 md:p-6 text-left">
+          <h2 class="text-base md:text-lg font-bold mb-3">PARTICIPA EN LA EVALUACIÓN</h2>
+          <p class="text-xs md:text-sm leading-relaxed">
+            Este proyecto tiene como finalidad construir una herramienta digital de diagnóstico de sostenibilidad social en el sector turístico de Canarias, que recoja también la visión de las empresas. Tu participación es clave para conocer cómo se están aplicando principios de sostenibilidad en la gestión, el empleo, la igualdad de oportunidades, la accesibilidad, la vivienda vacacional, la fiscalidad y la responsabilidad social corporativa. Con tu colaboración, podrás solicitar un certificado que reconozca tu aporte al proyecto. Asimismo, al cierre del proceso se compartirá un informe con los resultados agregados, construido a partir de todas las respuestas recibidas.
+          </p>
+        </div>
+
+        <div class="bg-white bg-opacity-10 rounded-lg p-4 md:p-6 text-left">
+          <h2 class="text-base md:text-lg font-bold mb-3">PROTECCIÓN DE TUS DATOS Y CERTIFICACIÓN DE TÚ PARTICIPACIÓN</h2>
+          <p class="text-xs md:text-sm leading-relaxed">
+            <strong>Responsable del tratamiento:</strong> GESPROTUR, S.A.U. MP con NIF A A35245786 y dirección electrónica <a href="https://gesprotur.com/" target="_blank" class="underline hover:text-amarillo">https://gesprotur.com/</a>: <strong>Finalidad:</strong> (i) Desarrollo del proyecto de diagnóstico y análisis participativo de sostenibilidad turística en el territorio, orientado a la elaboración, validación y mejora de una herramienta técnica de apoyo para la toma de decisiones en el sector. (ii) Envió de informes y certificados de participación en caso de aceptación. <strong>Principios aplicados y base legitimadora:</strong> Se aplica el principio de minimización de datos y privacidad desde el diseño de la herramienta, recogiendo únicamente la información imprescindible, lo que significa que lo se recopilan datos personales de modo directo, ni se analizan de modo alguno, el único dato personal que puede ser objeto de tratamiento es el vinculado a la IP del dispositivo y el correo electrónico que nos proporcione para recibir el informe de diagnóstico resultante de la herramienta. Las entrevistas realizadas serán conservadas bloqueadas a efectos de justificación del proyecto durante 5 años (i) Interés público. (ii) Consentimiento del interesado <strong>Destinatarios:</strong> Toda la información será tratada y conservada dentro de los sistemas informáticos de Gesprotur únicamente, no se usan herramientas de análisis Big Data ni Inteligencia Artificial que utilicen o puedan acceder a los datos personales obtenidos en el marco del presente proyecto. <strong>Ejercicio de derechos e información adicional:</strong> <a href="mailto:dpd@gesprotur.com" class="underline hover:text-amarillo">dpd@gesprotur.com</a>, <a href="https://gesprotur.com/politica-de-privacidad/" target="_blank" class="underline hover:text-amarillo">https://gesprotur.com/politica-de-privacidad/</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selector de Formularios -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-3xl font-bold text-azuloscuro mb-8 text-center">Selecciona tu perfil</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Elige el formulario que corresponda a tu perfil y comparte tu experiencia. Tu participación nos ayuda a mejorar el impacto social del turismo en Canarias.
+      </p>
+
+      <!-- Botones de Formularios -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <button onclick="showForm('empresarios')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+          <div class="text-4xl mb-3">👔</div>
+          <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Empresarios</h3>
+          <p class="text-sm text-gray-600 group-hover:text-white">Del sector turístico</p>
+        </button>
+
+        <button onclick="showForm('turistas')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+          <div class="text-4xl mb-3">✈️</div>
+          <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Turistas</h3>
+          <p class="text-sm text-gray-600 group-hover:text-white">Visitantes de Canarias</p>
+        </button>
+
+        <button onclick="showForm('trabajadores')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+          <div class="text-4xl mb-3">👥</div>
+          <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Trabajadores</h3>
+          <p class="text-sm text-gray-600 group-hover:text-white">Del sector turístico</p>
+        </button>
+
+        <button onclick="showForm('residentes')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+          <div class="text-4xl mb-3">🏘️</div>
+          <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Residentes</h3>
+          <p class="text-sm text-gray-600 group-hover:text-white">De las Islas Canarias</p>
+        </button>
+
+        <button onclick="showForm('administraciones')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+          <div class="text-4xl mb-3">🏛️</div>
+          <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Administraciones</h3>
+          <p class="text-sm text-gray-600 group-hover:text-white">Públicas</p>
+        </button>
+      </div>
+
+      <!-- Contenedor de Formularios -->
+      <div id="form-wrapper" class="hidden">
+        <div class="mb-6 flex justify-between items-center">
+          <h3 id="form-title" class="text-2xl font-bold text-azuloscuro"></h3>
+          <button onclick="hideForm()" class="bg-gray-200 px-4 py-2 rounded-lg text-azuloscuro hover:bg-gray-300 transition">← Volver a la selección</button>
+        </div>
+
+        <!-- Empresarios -->
+        <div id="form-empresarios" class="form-container hidden">
+          <div class="bg-white rounded-lg shadow-lg p-4">
+            <iframe
+              width="100%"
+              height="700px"
+              src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UMlBFM1NLNTU5MzZIR082V0dTVThWNVlONy4u&embed=true"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              style="border: none; max-width:100%; max-height:100vh"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              msallowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Turistas -->
+        <div id="form-turistas" class="form-container hidden">
+          <div class="bg-white rounded-lg shadow-lg p-4">
+            <iframe
+              width="100%"
+              height="700px"
+              src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UQkMyVlVQNlBJUE1DR0dRRzdZNTZBRk01NS4u&embed=true"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              style="border: none; max-width:100%; max-height:100vh"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              msallowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Trabajadores -->
+        <div id="form-trabajadores" class="form-container hidden">
+          <div class="bg-white rounded-lg shadow-lg p-4">
+            <iframe
+              width="100%"
+              height="700px"
+              src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UQzNROVlUQlJSUkxLV00xR1MxNjhCSjAxVS4u&embed=true"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              style="border: none; max-width:100%; max-height:100vh"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              msallowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Residentes -->
+        <div id="form-residentes" class="form-container hidden">
+          <div class="bg-white rounded-lg shadow-lg p-4">
+            <iframe
+              width="100%"
+              height="700px"
+              src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UNFYzNjg5SzI0SVQ5QTFGR1EwMERDSFhFRy4u&embed=true"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              style="border: none; max-width:100%; max-height:100vh"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              msallowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Administraciones -->
+        <div id="form-administraciones" class="form-container hidden">
+          <div class="bg-white rounded-lg shadow-lg p-4">
+            <iframe
+              width="100%"
+              height="700px"
+              src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UOUs4UjFGNU41MUNIUDhaRlJVRllNM0NCVy4u&embed=true"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              style="border: none; max-width:100%; max-height:100vh"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              msallowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    const formTitles = {
+      empresarios: 'Formulario para Empresarios',
+      turistas: 'Formulario para Turistas',
+      trabajadores: 'Formulario para Trabajadores',
+      residentes: 'Formulario para Residentes',
+      administraciones: 'Formulario para Administraciones Públicas'
+    };
+
+    function showForm(formType) {
+      // Hide all forms
+      document.querySelectorAll('.form-container').forEach(form => {
+        form.classList.add('hidden');
+      });
+
+      // Show wrapper and selected form
+      document.getElementById('form-wrapper').classList.remove('hidden');
+      const selectedForm = document.getElementById('form-' + formType);
+      selectedForm.classList.remove('hidden');
+      document.getElementById('form-title').textContent = formTitles[formType];
+
+      // Reload iframe to fix display issues when switching between forms
+      const iframe = selectedForm.querySelector('iframe');
+      if (iframe) {
+        const src = iframe.src;
+        iframe.src = '';
+        setTimeout(() => {
+          iframe.src = src;
+        }, 10);
+      }
+
+      // Scroll to form
+      document.getElementById('form-wrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function hideForm() {
+      document.getElementById('form-wrapper').classList.add('hidden');
+      document.querySelectorAll('.form-container').forEach(form => {
+        form.classList.add('hidden');
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

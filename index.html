@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canarias Avanza - Avanzando al turismo que suma</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.canariasavanza.com/wp-content/uploads/2025/09/cropped-GESPROTUR-favicon-web-32x32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amarillo: '#FBBD14',
+            naranja: '#E8851E',
+            azul: '#009AD5',
+            azuloscuro: '#253777'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-gray-800">
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Aviso de Prueba de Concepto -->
+  <section id="aviso-prueba" class="bg-gradient-to-r from-amarillo via-naranja to-amarillo py-4 border-b-4 border-azuloscuro">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="bg-white bg-opacity-95 rounded-lg p-4 md:p-6 shadow-2xl border-2 border-azuloscuro relative">
+        <button onclick="cerrarAviso()" class="absolute top-2 right-2 md:top-4 md:right-4 text-azuloscuro hover:text-naranja transition text-2xl md:text-3xl font-bold leading-none" aria-label="Cerrar aviso" title="Cerrar aviso">
+          ×
+        </button>
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+          <div class="text-4xl md:text-5xl flex-shrink-0">⚠️</div>
+          <div class="flex-1 w-full pr-8">
+            <h3 class="text-xl md:text-2xl font-bold text-naranja mb-3 text-center">SITIO DE PRUEBA DE CONCEPTO</h3>
+            <div class="space-y-3 text-gray-800 text-sm md:text-base">
+              <p class="text-justify leading-relaxed">
+                Este sitio es una <strong>prueba de concepto</strong> de la herramienta de diagnóstico desarrollada por <strong>Beta Group Services S.A.S.</strong> en el marco del <strong>Contrato N.º 7/2025</strong> (Expediente 63/2025), adjudicado por GESPROTUR (Gestión de Proyectos y Estudios Turísticos en Canarias, S.A.U. MP).
+              </p>
+              <p class="text-justify leading-relaxed">
+                <strong class="text-azul">📅 La versión oficial estará disponible en</strong> <a href="https://www.canariasavanza.com/" target="_blank" class="text-azuloscuro font-bold underline hover:text-azul transition">www.canariasavanza.com</a> <strong class="text-azul">a partir del 31 de octubre de 2025.</strong>
+              </p>
+              <div class="bg-azul bg-opacity-10 rounded-lg p-3 md:p-4 border-l-4 border-azul">
+                <p class="text-justify leading-relaxed mb-2">
+                  <strong>🔬 Datos de prueba:</strong> Se incluyen datos manuales y <strong>1,000 registros sintéticos</strong> por formulario generados mediante algoritmos en Python para probar el dashboard.
+                </p>
+                <p class="text-justify leading-relaxed">
+                  <strong>✅ Validación:</strong> Las pruebas manuales validan el funcionamiento de los formularios y la automatización del envío de certificados de participación.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-azuloscuro to-azul text-white py-24">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Avanzando al turismo que suma</h1>
+      <p class="text-xl md:text-2xl mb-8">Canarias avanza hacia un turismo socialmente sostenible</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="resultados.html" class="bg-amarillo px-8 py-3 rounded-lg text-azuloscuro font-semibold hover:bg-naranja hover:text-white transition">Ver Resultados</a>
+        <a href="formularios.html" class="bg-naranja px-8 py-3 rounded-lg text-white font-semibold hover:bg-amarillo hover:text-azuloscuro transition">Participa Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-3xl font-bold text-azuloscuro mb-6 text-center">¿Qué es Canarias Avanza?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+        Esta iniciativa de GESPROTUR impulsa la sostenibilidad social en el turismo del archipiélago mediante herramientas digitales de diagnóstico, formación y participación activa del sector.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+        El proyecto Canarias Avanza busca transformar el modelo turístico de las Islas Canarias hacia uno más sostenible y responsable, poniendo especial énfasis en el impacto social del turismo en las comunidades locales.
+      </p>
+    </div>
+  </section>
+
+  <!-- Objetivos Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-3xl font-bold text-azuloscuro mb-12 text-center">Objetivos del proyecto</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="text-azul text-4xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold text-azuloscuro mb-3">Diagnóstico</h3>
+          <p class="text-gray-700">
+            Evaluar el impacto social del turismo mediante herramientas digitales que recopilan datos de todos los actores del sector.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="text-azul text-4xl mb-4">🤝</div>
+          <h3 class="text-xl font-bold text-azuloscuro mb-3">Participación</h3>
+          <p class="text-gray-700">
+            Involucrar activamente a todos los actores del turismo: empresarios, trabajadores, turistas, residentes y administraciones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Participantes Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-3xl font-bold text-azuloscuro mb-12 text-center">¿Quién Puede Participar?</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="text-center p-4">
+          <div class="bg-azul text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">👔</div>
+          <h4 class="font-bold text-azuloscuro mb-2">Empresarios</h4>
+          <p class="text-sm text-gray-600">Del sector turístico</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="bg-azul text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✈️</div>
+          <h4 class="font-bold text-azuloscuro mb-2">Turistas</h4>
+          <p class="text-sm text-gray-600">Visitantes de Canarias</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="bg-azul text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">👥</div>
+          <h4 class="font-bold text-azuloscuro mb-2">Trabajadores</h4>
+          <p class="text-sm text-gray-600">Del sector turístico</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="bg-azul text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🏘️</div>
+          <h4 class="font-bold text-azuloscuro mb-2">Residentes</h4>
+          <p class="text-sm text-gray-600">De las Islas Canarias</p>
+        </div>
+        <div class="text-center p-4">
+          <div class="bg-azul text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🏛️</div>
+          <h4 class="font-bold text-azuloscuro mb-2">Administraciones</h4>
+          <p class="text-sm text-gray-600">Públicas</p>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="formularios.html" class="bg-azul text-white px-8 py-4 rounded-lg font-semibold hover:bg-azuloscuro transition inline-block">Acceder a los Formularios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultados - Canarias Avanza</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.canariasavanza.com/wp-content/uploads/2025/09/cropped-GESPROTUR-favicon-web-32x32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amarillo: '#FBBD14',
+            naranja: '#E8851E',
+            azul: '#009AD5',
+            azuloscuro: '#253777'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-gray-800">
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-azuloscuro to-azul text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Dashboard de Sostenibilidad Social</h1>
+      <p class="text-xs md:text-sm leading-relaxed">Este dashboard presenta los resultados consolidados de las evaluaciones realizadas por empresarios, turistas, trabajadores, residentes y administraciones públicas sobre el impacto social del turismo en las Islas Canarias.</p>
+    </div>
+  </section>
+
+  <!-- Dashboard Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="px-6">
+      
+      <!-- Power BI Dashboard -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <iframe
+          title="Dashboard de Sostenibilidad Social – Turismo Canarias 2025 (v1)"
+          width="100%"
+          height="800"
+          src="https://app.powerbi.com/view?r=eyJrIjoiNThmMzdjMGUtOTI3NC00N2U4LWFmNDYtYTY3YWVhNDhiNzc3IiwidCI6IjlkYWE4ZWNlLWYwYzAtNDcyZS1hMTcyLTM3NjJjN2EzNjM2ZiJ9"
+          frameborder="0"
+          allowFullScreen="true"
+          class="w-full rounded">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
