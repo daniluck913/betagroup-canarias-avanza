@@ -178,7 +178,7 @@ window.showForm = function(formType) {
   document.getElementById('form-wrapper').classList.remove('hidden');
   const selectedForm = document.getElementById('form-' + formType);
   selectedForm.classList.remove('hidden');
-  document.getElementById('form-title').textContent = formTitles[formType];
+  document.getElementById('form-title').textContent = window.formTitles[formType];
 
   // Reload iframe to fix display issues when switching between forms
   const iframe = selectedForm.querySelector('iframe');
@@ -246,7 +246,7 @@ window.toggleFullscreen = function() {
       closeBtn.onclick = window.toggleFullscreen;
       document.body.appendChild(closeBtn);
 
-      updateFullscreenButton();
+      window.updateFullscreenButton();
     } else {
       iframe.style.position = '';
       iframe.style.top = '';
@@ -262,7 +262,7 @@ window.toggleFullscreen = function() {
         closeBtn.remove();
       }
 
-      updateFullscreenButton();
+      window.updateFullscreenButton();
     }
   } else {
     // For desktop: use native fullscreen API
