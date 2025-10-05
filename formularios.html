@@ -96,13 +96,20 @@
       <div id="form-wrapper" class="hidden">
         <div class="mb-6 flex justify-between items-center">
           <h3 id="form-title" class="text-2xl font-bold text-azuloscuro"></h3>
-          <button onclick="hideForm()" class="bg-gray-200 px-4 py-2 rounded-lg text-azuloscuro hover:bg-gray-300 transition">← Volver a la selección</button>
+          <div class="flex gap-2">
+            <button onclick="toggleFullscreen()" class="bg-azul text-white px-4 py-2 rounded-lg hover:bg-azuloscuro transition flex items-center gap-2">
+              <span id="fullscreen-icon">⛶</span>
+              <span id="fullscreen-text">Pantalla Completa</span>
+            </button>
+            <button onclick="hideForm()" class="bg-gray-200 px-4 py-2 rounded-lg text-azuloscuro hover:bg-gray-300 transition">← Volver a la selección</button>
+          </div>
         </div>
 
         <!-- Empresarios -->
         <div id="form-empresarios" class="form-container hidden">
           <div class="bg-white rounded-lg shadow-lg p-4">
             <iframe
+              id="iframe-empresarios"
               width="100%"
               height="100vh"
               src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UMlBFM1NLNTU5MzZIR082V0dTVThWNVlONy4u&embed=true"
@@ -122,6 +129,7 @@
         <div id="form-turistas" class="form-container hidden">
           <div class="bg-white rounded-lg shadow-lg p-4">
             <iframe
+              id="iframe-turistas"
               width="100%"
               height="100vh"
               src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UQkMyVlVQNlBJUE1DR0dRRzdZNTZBRk01NS4u&embed=true"
@@ -141,6 +149,7 @@
         <div id="form-trabajadores" class="form-container hidden">
           <div class="bg-white rounded-lg shadow-lg p-4">
             <iframe
+              id="iframe-trabajadores"
               width="100%"
               height="100vh"
               src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UQzNROVlUQlJSUkxLV00xR1MxNjhCSjAxVS4u&embed=true"
@@ -160,6 +169,7 @@
         <div id="form-residentes" class="form-container hidden">
           <div class="bg-white rounded-lg shadow-lg p-4">
             <iframe
+              id="iframe-residentes"
               width="100%"
               height="100vh"
               src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UNFYzNjg5SzI0SVQ5QTFGR1EwMERDSFhFRy4u&embed=true"
@@ -179,6 +189,7 @@
         <div id="form-administraciones" class="form-container hidden">
           <div class="bg-white rounded-lg shadow-lg p-4">
             <iframe
+              id="iframe-administraciones"
               width="100%"
               height="100vh"
               src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UOUs4UjFGNU41MUNIUDhaRlJVRllNM0NCVy4u&embed=true"
@@ -242,6 +253,58 @@
         form.classList.add('hidden');
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleFullscreen() {
+      // Get the currently visible iframe
+      const visibleForm = document.querySelector('.form-container:not(.hidden)');
+      if (!visibleForm) return;
+
+      const iframe = visibleForm.querySelector('iframe');
+      if (!iframe) return;
+
+      if (!document.fullscreenElement) {
+        // Enter fullscreen
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+          iframe.mozRequestFullScreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      } else {
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
+    }
+
+    // Update button text when fullscreen changes
+    document.addEventListener('fullscreenchange', updateFullscreenButton);
+    document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+    document.addEventListener('mozfullscreenchange', updateFullscreenButton);
+    document.addEventListener('msfullscreenchange', updateFullscreenButton);
+
+    function updateFullscreenButton() {
+      const icon = document.getElementById('fullscreen-icon');
+      const text = document.getElementById('fullscreen-text');
+
+      if (document.fullscreenElement) {
+        icon.textContent = '⛶';
+        text.textContent = 'Salir Pantalla Completa';
+      } else {
+        icon.textContent = '⛶';
+        text.textContent = 'Pantalla Completa';
+      }
     }
   </script>
 </body>
