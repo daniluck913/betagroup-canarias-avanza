@@ -278,6 +278,27 @@
           iframe.style.height = '100vh';
           iframe.style.zIndex = '9999';
           isMaximized = true;
+
+          // Create close button for mobile
+          const closeBtn = document.createElement('button');
+          closeBtn.id = 'mobile-close-btn';
+          closeBtn.innerHTML = '× Cerrar';
+          closeBtn.style.position = 'fixed';
+          closeBtn.style.top = '10px';
+          closeBtn.style.right = '10px';
+          closeBtn.style.zIndex = '10000';
+          closeBtn.style.backgroundColor = '#253777';
+          closeBtn.style.color = 'white';
+          closeBtn.style.border = 'none';
+          closeBtn.style.padding = '12px 20px';
+          closeBtn.style.borderRadius = '8px';
+          closeBtn.style.fontSize = '16px';
+          closeBtn.style.fontWeight = 'bold';
+          closeBtn.style.cursor = 'pointer';
+          closeBtn.style.boxShadow = '0 4px 6px rgba(0,0,0,0.3)';
+          closeBtn.onclick = toggleFullscreen;
+          document.body.appendChild(closeBtn);
+
           updateFullscreenButton();
         } else {
           iframe.style.position = '';
@@ -287,6 +308,13 @@
           iframe.style.height = '';
           iframe.style.zIndex = '';
           isMaximized = false;
+
+          // Remove close button
+          const closeBtn = document.getElementById('mobile-close-btn');
+          if (closeBtn) {
+            closeBtn.remove();
+          }
+
           updateFullscreenButton();
         }
       } else {
