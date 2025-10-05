@@ -160,7 +160,7 @@ function cerrarAviso() {
 }
 
 // Formularios page functionality
-const formTitles = {
+window.formTitles = {
   empresarios: 'Formulario para Empresarios',
   turistas: 'Formulario para Turistas',
   trabajadores: 'Formulario para Trabajadores',
@@ -168,7 +168,7 @@ const formTitles = {
   administraciones: 'Formulario para Administraciones Públicas'
 };
 
-function showForm(formType) {
+window.showForm = function(formType) {
   // Hide all forms
   document.querySelectorAll('.form-container').forEach(form => {
     form.classList.add('hidden');
@@ -192,19 +192,19 @@ function showForm(formType) {
 
   // Scroll to form
   document.getElementById('form-wrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+};
 
-function hideForm() {
+window.hideForm = function() {
   document.getElementById('form-wrapper').classList.add('hidden');
   document.querySelectorAll('.form-container').forEach(form => {
     form.classList.add('hidden');
   });
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+};
 
-let isMaximized = false;
+window.isMaximized = false;
 
-function toggleFullscreen() {
+window.toggleFullscreen = function() {
   // Get the currently visible iframe
   const visibleForm = document.querySelector('.form-container:not(.hidden)');
   if (!visibleForm) return;
@@ -224,7 +224,7 @@ function toggleFullscreen() {
       iframe.style.width = '100vw';
       iframe.style.height = '100vh';
       iframe.style.zIndex = '9999';
-      isMaximized = true;
+      window.isMaximized = true;
 
       // Create close button for mobile
       const closeBtn = document.createElement('button');
@@ -243,7 +243,7 @@ function toggleFullscreen() {
       closeBtn.style.fontWeight = 'bold';
       closeBtn.style.cursor = 'pointer';
       closeBtn.style.boxShadow = '0 4px 6px rgba(0,0,0,0.3)';
-      closeBtn.onclick = toggleFullscreen;
+      closeBtn.onclick = window.toggleFullscreen;
       document.body.appendChild(closeBtn);
 
       updateFullscreenButton();
@@ -254,7 +254,7 @@ function toggleFullscreen() {
       iframe.style.width = '';
       iframe.style.height = '';
       iframe.style.zIndex = '';
-      isMaximized = false;
+      window.isMaximized = false;
 
       // Remove close button
       const closeBtn = document.getElementById('mobile-close-btn');
@@ -290,16 +290,16 @@ function toggleFullscreen() {
       }
     }
   }
-}
+};
 
-function updateFullscreenButton() {
+window.updateFullscreenButton = function() {
   const icon = document.getElementById('fullscreen-icon');
   const text = document.getElementById('fullscreen-text');
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   if (isMobile) {
     // Mobile: use maximized state
-    if (isMaximized) {
+    if (window.isMaximized) {
       icon.textContent = '⛶';
       text.textContent = 'Salir Maximizado';
     } else {
@@ -316,13 +316,13 @@ function updateFullscreenButton() {
       text.textContent = 'Pantalla Completa';
     }
   }
-}
+};
 
 // Update button text when fullscreen changes
-document.addEventListener('fullscreenchange', updateFullscreenButton);
-document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
-document.addEventListener('mozfullscreenchange', updateFullscreenButton);
-document.addEventListener('msfullscreenchange', updateFullscreenButton);
+document.addEventListener('fullscreenchange', window.updateFullscreenButton);
+document.addEventListener('webkitfullscreenchange', window.updateFullscreenButton);
+document.addEventListener('mozfullscreenchange', window.updateFullscreenButton);
+document.addEventListener('msfullscreenchange', window.updateFullscreenButton);
 
 // Load header and footer when DOM is ready
 document.addEventListener('DOMContentLoaded', loadHeaderFooter);
