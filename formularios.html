@@ -255,6 +255,8 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    let isMaximized = false;
+
     function toggleFullscreen() {
       // Get the currently visible iframe
       const visibleForm = document.querySelector('.form-container:not(.hidden)');
@@ -263,27 +265,54 @@
       const iframe = visibleForm.querySelector('iframe');
       if (!iframe) return;
 
-      if (!document.fullscreenElement) {
-        // Enter fullscreen
-        if (iframe.requestFullscreen) {
-          iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) {
-          iframe.webkitRequestFullscreen();
-        } else if (iframe.mozRequestFullScreen) {
-          iframe.mozRequestFullScreen();
-        } else if (iframe.msRequestFullscreen) {
-          iframe.msRequestFullscreen();
+      // Check if device is mobile/iOS
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // For mobile: toggle maximized state with CSS
+        if (!isMaximized) {
+          iframe.style.position = 'fixed';
+          iframe.style.top = '0';
+          iframe.style.left = '0';
+          iframe.style.width = '100vw';
+          iframe.style.height = '100vh';
+          iframe.style.zIndex = '9999';
+          isMaximized = true;
+          updateFullscreenButton();
+        } else {
+          iframe.style.position = '';
+          iframe.style.top = '';
+          iframe.style.left = '';
+          iframe.style.width = '';
+          iframe.style.height = '';
+          iframe.style.zIndex = '';
+          isMaximized = false;
+          updateFullscreenButton();
         }
       } else {
-        // Exit fullscreen
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
+        // For desktop: use native fullscreen API
+        if (!document.fullscreenElement) {
+          // Enter fullscreen
+          if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+          } else if (iframe.webkitRequestFullscreen) {
+            iframe.webkitRequestFullscreen();
+          } else if (iframe.mozRequestFullScreen) {
+            iframe.mozRequestFullScreen();
+          } else if (iframe.msRequestFullscreen) {
+            iframe.msRequestFullscreen();
+          }
+        } else {
+          // Exit fullscreen
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
         }
       }
     }
@@ -297,13 +326,26 @@
     function updateFullscreenButton() {
       const icon = document.getElementById('fullscreen-icon');
       const text = document.getElementById('fullscreen-text');
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      if (document.fullscreenElement) {
-        icon.textContent = '⛶';
-        text.textContent = 'Salir Pantalla Completa';
+      if (isMobile) {
+        // Mobile: use maximized state
+        if (isMaximized) {
+          icon.textContent = '⛶';
+          text.textContent = 'Salir Maximizado';
+        } else {
+          icon.textContent = '⛶';
+          text.textContent = 'Maximizar';
+        }
       } else {
-        icon.textContent = '⛶';
-        text.textContent = 'Pantalla Completa';
+        // Desktop: use fullscreen state
+        if (document.fullscreenElement) {
+          icon.textContent = '⛶';
+          text.textContent = 'Salir Pantalla Completa';
+        } else {
+          icon.textContent = '⛶';
+          text.textContent = 'Pantalla Completa';
+        }
       }
     }
   </script>
