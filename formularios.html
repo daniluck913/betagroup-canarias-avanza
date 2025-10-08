@@ -31,61 +31,88 @@
   <div id="header-placeholder"></div>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-azuloscuro to-azul text-white py-12">
-    <div class="w-full px-4 md:px-6">
-      <div class="w-full space-y-4">
-        <div class="bg-white bg-opacity-10 rounded-lg p-4 md:p-6 text-left">
-          <h2 class="text-base md:text-lg font-bold mb-3">PARTICIPA EN LA EVALUACIÓN</h2>
-          <p class="text-xs md:text-sm leading-relaxed">
-            Este proyecto tiene como finalidad construir una herramienta digital de diagnóstico de sostenibilidad social en el sector turístico de Canarias, que recoja también la visión de las empresas. Tu participación es clave para conocer cómo se están aplicando principios de sostenibilidad en la gestión, el empleo, la igualdad de oportunidades, la accesibilidad, la vivienda vacacional, la fiscalidad y la responsabilidad social corporativa. Con tu colaboración, podrás solicitar un certificado que reconozca tu aporte al proyecto. Asimismo, al cierre del proceso se compartirá un informe con los resultados agregados, construido a partir de todas las respuestas recibidas.
-          </p>
-        </div>
-
-        <div class="bg-white bg-opacity-10 rounded-lg p-4 md:p-6 text-left">
-          <h2 class="text-base md:text-lg font-bold mb-3">PROTECCIÓN DE TUS DATOS Y CERTIFICACIÓN DE TÚ PARTICIPACIÓN</h2>
-          <p class="text-xs md:text-sm leading-relaxed">
-            <strong>Responsable del tratamiento:</strong> GESPROTUR, S.A.U. MP con NIF A A35245786 y dirección electrónica <a href="https://gesprotur.com/" target="_blank" class="underline hover:text-amarillo">https://gesprotur.com/</a>: <strong>Finalidad:</strong> (i) Desarrollo del proyecto de diagnóstico y análisis participativo de sostenibilidad turística en el territorio, orientado a la elaboración, validación y mejora de una herramienta técnica de apoyo para la toma de decisiones en el sector. (ii) Envió de informes y certificados de participación en caso de aceptación. <strong>Principios aplicados y base legitimadora:</strong> Se aplica el principio de minimización de datos y privacidad desde el diseño de la herramienta, recogiendo únicamente la información imprescindible, lo que significa que lo se recopilan datos personales de modo directo, ni se analizan de modo alguno, el único dato personal que puede ser objeto de tratamiento es el vinculado a la IP del dispositivo y el correo electrónico que nos proporcione para recibir el informe de diagnóstico resultante de la herramienta. Las entrevistas realizadas serán conservadas bloqueadas a efectos de justificación del proyecto durante 5 años (i) Interés público. (ii) Consentimiento del interesado <strong>Destinatarios:</strong> Toda la información será tratada y conservada dentro de los sistemas informáticos de Gesprotur únicamente, no se usan herramientas de análisis Big Data ni Inteligencia Artificial que utilicen o puedan acceder a los datos personales obtenidos en el marco del presente proyecto. <strong>Ejercicio de derechos e información adicional:</strong> <a href="mailto:dpd@gesprotur.com" class="underline hover:text-amarillo">dpd@gesprotur.com</a>, <a href="https://gesprotur.com/politica-de-privacidad/" target="_blank" class="underline hover:text-amarillo">https://gesprotur.com/politica-de-privacidad/</a>.
-          </p>
-        </div>
-      </div>
+  <section class="bg-gradient-to-r from-azuloscuro to-azul text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Selecciona tu perfil</h1>
+      <p class="text-xs md:text-sm leading-relaxed">Elige el formulario que corresponda a tu perfil y comparte tu experiencia. Tu participación nos ayuda a mejorar el impacto social del turismo en Canarias.</p>
     </div>
   </section>
+
 
   <!-- Selector de Formularios -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-6 max-w-6xl">
-      <h2 class="text-3xl font-bold text-azuloscuro mb-8 text-center">Selecciona tu perfil</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-        Elige el formulario que corresponda a tu perfil y comparte tu experiencia. Tu participación nos ayuda a mejorar el impacto social del turismo en Canarias.
-      </p>
 
       <!-- Botones de Formularios -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <button onclick="showForm('empresarios')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+        <button onclick="showForm('empresarios')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group relative">
+          <span class="absolute top-2 right-2 w-6 h-4 rounded overflow-hidden shadow" title="Español">
+            <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+              <rect width="3" height="2" fill="#c60b1e"/>
+              <rect width="3" height="1.5" y="0.25" fill="#ffc400"/>
+            </svg>
+          </span>
           <div class="text-4xl mb-3">👔</div>
           <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Empresarios</h3>
           <p class="text-sm text-gray-600 group-hover:text-white">Del sector turístico</p>
         </button>
 
-        <button onclick="showForm('turistas')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+        <button onclick="showForm('turistas')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group relative">
+          <span class="absolute top-2 right-2 w-6 h-4 rounded overflow-hidden shadow" title="Español">
+            <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+              <rect width="3" height="2" fill="#c60b1e"/>
+              <rect width="3" height="1.5" y="0.25" fill="#ffc400"/>
+            </svg>
+          </span>
           <div class="text-4xl mb-3">✈️</div>
           <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Turistas</h3>
           <p class="text-sm text-gray-600 group-hover:text-white">Visitantes de Canarias</p>
         </button>
 
-        <button onclick="showForm('trabajadores')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+        <button onclick="showForm('turistas-en')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group relative">
+          <span class="absolute top-2 right-2 w-6 h-4 rounded overflow-hidden shadow" title="English">
+            <svg viewBox="0 0 7410 3900" xmlns="http://www.w3.org/2000/svg">
+              <rect width="7410" height="3900" fill="#b22234"/>
+              <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
+              <rect width="2964" height="2100" fill="#3c3b6e"/>
+            </svg>
+          </span>
+          <div class="text-4xl mb-3">✈️</div>
+          <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Tourists</h3>
+          <p class="text-sm text-gray-600 group-hover:text-white">Visitors to the Canary Islands</p>
+        </button>
+
+        <button onclick="showForm('trabajadores')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group relative">
+          <span class="absolute top-2 right-2 w-6 h-4 rounded overflow-hidden shadow" title="Español">
+            <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+              <rect width="3" height="2" fill="#c60b1e"/>
+              <rect width="3" height="1.5" y="0.25" fill="#ffc400"/>
+            </svg>
+          </span>
           <div class="text-4xl mb-3">👥</div>
           <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Trabajadores</h3>
           <p class="text-sm text-gray-600 group-hover:text-white">Del sector turístico</p>
         </button>
 
-        <button onclick="showForm('residentes')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+        <button onclick="showForm('residentes')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group relative">
+          <span class="absolute top-2 right-2 w-6 h-4 rounded overflow-hidden shadow" title="Español">
+            <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+              <rect width="3" height="2" fill="#c60b1e"/>
+              <rect width="3" height="1.5" y="0.25" fill="#ffc400"/>
+            </svg>
+          </span>
           <div class="text-4xl mb-3">🏘️</div>
           <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Residentes</h3>
           <p class="text-sm text-gray-600 group-hover:text-white">De las Islas Canarias</p>
         </button>
 
-        <button onclick="showForm('administraciones')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group">
+        <button onclick="showForm('administraciones')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group relative">
+          <span class="absolute top-2 right-2 w-6 h-4 rounded overflow-hidden shadow" title="Español">
+            <svg viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+              <rect width="3" height="2" fill="#c60b1e"/>
+              <rect width="3" height="1.5" y="0.25" fill="#ffc400"/>
+            </svg>
+          </span>
           <div class="text-4xl mb-3">🏛️</div>
           <h3 class="text-xl font-bold text-azuloscuro group-hover:text-white mb-2">Administraciones</h3>
           <p class="text-sm text-gray-600 group-hover:text-white">Públicas</p>
@@ -127,6 +154,24 @@
             width="100%"
             height="100vh"
             src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb9_d2MWNwVJEm8zUYM4Zha1UQkMyVlVQNlBJUE1DR0dRRzdZNTZBRk01NS4u&embed=true"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            style="border: none; max-width:100%; max-height:100vh; min-width:350px; min-height:480px"
+            allowfullscreen
+            webkitallowfullscreen
+            mozallowfullscreen
+            msallowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Turistas (English) -->
+        <div id="form-turistas-en" class="form-container hidden">
+          <iframe
+            id="iframe-turistas-en"
+            width="100%"
+            height="100vh"
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=zo6qncDwLkehcjdix6Njb4GqtuKNBt1HseJeTznNUPxUQ1pLVUtYOEVWUTcyQ01RUTFQQ1U5M1lQWSQlQCN0PWcu&embed=true"
             frameborder="0"
             marginwidth="0"
             marginheight="0"
