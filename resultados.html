@@ -36,18 +36,12 @@
   <!-- Dashboard Section -->
   <section class="py-16 bg-gray-50">
     <div class="px-6">
-      
+
       <!-- Power BI Dashboard -->
       <div class="bg-white rounded-lg shadow-lg p-4">
-        <iframe
-          title="Dashboard de Sostenibilidad Social – Turismo Canarias 2025 (v1)"
-          width="100%"
-          height="800"
-          src="https://app.powerbi.com/view?r=eyJrIjoiNThmMzdjMGUtOTI3NC00N2U4LWFmNDYtYTY3YWVhNDhiNzc3IiwidCI6IjlkYWE4ZWNlLWYwYzAtNDcyZS1hMTcyLTM3NjJjN2EzNjM2ZiJ9&embedImagePlaceholder=true&pageName=6f8e9434b45de4cc6cd0"
-          frameborder="0"
-          allowFullScreen="true"
-          class="w-full rounded">
-        </iframe>
+        <div id="powerbi-container">
+          <!-- El iframe se cargará dinámicamente según el dispositivo -->
+        </div>
       </div>
 
     </div>
@@ -57,5 +51,6 @@
   <div id="footer-placeholder"></div>
 
   <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
