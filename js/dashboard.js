@@ -50,27 +50,34 @@ function enterFullscreenMode() {
       background: white;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
+      padding: 0;
+      margin: 0;
     `;
 
     container.style.cssText = `
       width: 100%;
       height: 100%;
-      padding: 0;
-      margin: 0;
+      padding: 0 !important;
+      margin: 0 !important;
       box-sizing: border-box;
     `;
 
     const iframe = container.querySelector('iframe');
     if (iframe) {
+      // Calcular altura disponible (viewport menos espacio para el botón)
+      const viewportHeight = window.innerHeight;
       iframe.style.cssText = `
         width: 100%;
-        height: 100%;
+        height: ${viewportHeight}px;
         min-height: 100vh;
         border: none;
+        touch-action: manipulation;
+        overflow: auto;
+        padding: 0;
+        margin: 0;
+        display: block;
       `;
-      // Asegurar que el iframe permita interacción táctil
-      iframe.setAttribute('scrolling', 'yes');
-      iframe.setAttribute('touch-action', 'auto');
+      console.log('Iframe ajustado a altura:', viewportHeight + 'px');
     }
 
     btn.style.display = 'flex';
@@ -136,13 +143,11 @@ function loadPowerBIDashboard() {
       <iframe
         id="powerbi-iframe-mobile"
         title="Dashboard de Sostenibilidad Social – Turismo Canarias 2025 (móvil)"
-        style="width: 100%; height: 600px; border: none;"
-        src="https://app.powerbi.com/view?r=eyJrIjoiYzJiYjI1YmQtNjY5Yy00NGM3LWE5YWEtZDNhYzBkMDljMjYzIiwidCI6IjlkYWE4ZWNlLWYwYzAtNDcyZS1hMTcyLTM3NjJjN2EzNjM2ZiJ9&pageName=6f8e9434b45de4cc6cd0"
+        style="width: 100%; height: 600px; border: none; touch-action: manipulation; padding: 0; margin: 0; display: block;"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYzJiYjI1YmQtNjY5Yy00NGM3LWE5YWEtZDNhYzBkMDljMjYzIiwidCI6IjlkYWE4ZWNlLWYwYzAtNDcyZS1hMTcyLTM3NjJjN2EzNjM2ZiJ9&pageName=6f8e9434b45de4cc6cd0&navContentPaneEnabled=true&filterPaneEnabled=true"
         frameborder="0"
-        allowFullScreen="true"
-        scrolling="yes"
-        allow="fullscreen"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation">
+        allowfullscreen
+        allow="autoplay; fullscreen; geolocation">
       </iframe>
     `;
     console.log('Iframe móvil cargado');
@@ -199,7 +204,7 @@ function loadPowerBIDashboard() {
         src="https://app.powerbi.com/view?r=eyJrIjoiNThmMzdjMGUtOTI3NC00N2U4LWFmNDYtYTY3YWVhNDhiNzc3IiwidCI6IjlkYWE4ZWNlLWYwYzAtNDcyZS1hMTcyLTM3NjJjN2EzNjM2ZiJ9&embedImagePlaceholder=true&pageName=6f8e9434b45de4cc6cd0"
         frameborder="0"
         allowFullScreen="true"
-        class="w-full rounded">
+        style="width: 100%; border: none; padding: 0; margin: 0; display: block;">
       </iframe>
     `;
     console.log('Iframe escritorio cargado');
