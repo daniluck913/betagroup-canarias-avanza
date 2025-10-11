@@ -48,7 +48,8 @@ function enterFullscreenMode() {
       height: 100vh;
       z-index: 9998;
       background: white;
-      overflow: hidden;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
     `;
 
     container.style.cssText = `
@@ -56,15 +57,20 @@ function enterFullscreenMode() {
       height: 100%;
       padding: 0;
       margin: 0;
+      box-sizing: border-box;
     `;
 
     const iframe = container.querySelector('iframe');
     if (iframe) {
       iframe.style.cssText = `
         width: 100%;
-        height: 100vh;
+        height: 100%;
+        min-height: 100vh;
         border: none;
       `;
+      // Asegurar que el iframe permita interacción táctil
+      iframe.setAttribute('scrolling', 'yes');
+      iframe.setAttribute('touch-action', 'auto');
     }
 
     btn.style.display = 'flex';
@@ -130,10 +136,13 @@ function loadPowerBIDashboard() {
       <iframe
         id="powerbi-iframe-mobile"
         title="Dashboard de Sostenibilidad Social – Turismo Canarias 2025 (móvil)"
-        style="width: 100%; height: 600px;"
+        style="width: 100%; height: 600px; border: none;"
         src="https://app.powerbi.com/view?r=eyJrIjoiYzJiYjI1YmQtNjY5Yy00NGM3LWE5YWEtZDNhYzBkMDljMjYzIiwidCI6IjlkYWE4ZWNlLWYwYzAtNDcyZS1hMTcyLTM3NjJjN2EzNjM2ZiJ9&pageName=6f8e9434b45de4cc6cd0"
         frameborder="0"
-        allowFullScreen="true">
+        allowFullScreen="true"
+        scrolling="yes"
+        allow="fullscreen"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation">
       </iframe>
     `;
     console.log('Iframe móvil cargado');
