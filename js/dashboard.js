@@ -1,7 +1,26 @@
-// Función para detectar si debe mostrar versión móvil basado en el ancho de pantalla
+// Función para detectar si debe mostrar versión móvil
 function isMobileDevice() {
-  // Detectar solo por ancho de pantalla para facilitar pruebas en navegador
-  return window.innerWidth <= 768;
+  // Detectar por user agent para dispositivos reales
+  const userAgent = navigator.userAgent;
+  const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
+
+  // También verificar el ancho de pantalla
+  const isMobileWidth = window.innerWidth <= 768;
+
+  // Detectar por touch capability
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  const isMobile = mobileRegex.test(userAgent.toLowerCase()) || (isMobileWidth && isTouchDevice);
+
+  console.log('Detección móvil:', {
+    userAgent: userAgent,
+    isMobileUA: mobileRegex.test(userAgent.toLowerCase()),
+    isMobileWidth: isMobileWidth,
+    isTouchDevice: isTouchDevice,
+    resultado: isMobile
+  });
+
+  return isMobile;
 }
 
 // Variable para controlar el estado de pantalla completa simulada
@@ -9,9 +28,16 @@ let isFullscreenMode = false;
 
 // Función para activar modo pantalla completa simulada
 function enterFullscreenMode() {
+  console.log('Intentando activar pantalla completa...');
   const wrapper = document.getElementById('dashboard-fullscreen-wrapper');
   const container = document.getElementById('powerbi-container');
   const btn = document.getElementById('exit-fullscreen-btn');
+
+  console.log('Elementos encontrados:', {
+    wrapper: !!wrapper,
+    container: !!container,
+    btn: !!btn
+  });
 
   if (wrapper && container && btn) {
     wrapper.style.cssText = `
@@ -46,6 +72,10 @@ function enterFullscreenMode() {
 
     // Ocultar el resto del contenido
     document.body.style.overflow = 'hidden';
+
+    console.log('Pantalla completa activada correctamente');
+  } else {
+    console.error('No se pudieron encontrar todos los elementos necesarios');
   }
 }
 
@@ -74,9 +104,17 @@ function exitFullscreenMode() {
 
 // Cargar el iframe apropiado según el dispositivo
 function loadPowerBIDashboard() {
+  console.log('Cargando dashboard...');
   const container = document.getElementById('powerbi-container');
 
+  if (!container) {
+    console.error('No se encontró el contenedor powerbi-container');
+    return;
+  }
+
   if (isMobileDevice()) {
+    console.log('Cargando versión móvil...');
+
     // Crear wrapper para pantalla completa si no existe
     let wrapper = document.getElementById('dashboard-fullscreen-wrapper');
     if (!wrapper) {
@@ -84,6 +122,7 @@ function loadPowerBIDashboard() {
       wrapper.id = 'dashboard-fullscreen-wrapper';
       container.parentNode.insertBefore(wrapper, container);
       wrapper.appendChild(container);
+      console.log('Wrapper creado');
     }
 
     // Iframe para móvil con botón flotante
@@ -97,6 +136,7 @@ function loadPowerBIDashboard() {
         allowFullScreen="true">
       </iframe>
     `;
+    console.log('Iframe móvil cargado');
 
     // Crear botón de salir si no existe
     let exitBtn = document.getElementById('exit-fullscreen-btn');
@@ -124,14 +164,18 @@ function loadPowerBIDashboard() {
         justify-content: center;
       `;
       document.body.appendChild(exitBtn);
+      console.log('Botón de salir creado');
     }
 
     // Activar modo pantalla completa automáticamente
     setTimeout(() => {
+      console.log('Activando pantalla completa en 500ms...');
       enterFullscreenMode();
     }, 500);
 
   } else {
+    console.log('Cargando versión escritorio...');
+
     // Salir del modo pantalla completa si estaba activo
     if (isFullscreenMode) {
       exitFullscreenMode();
@@ -149,6 +193,7 @@ function loadPowerBIDashboard() {
         class="w-full rounded">
       </iframe>
     `;
+    console.log('Iframe escritorio cargado');
   }
 }
 
