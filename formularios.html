@@ -24,6 +24,20 @@
     .form-container iframe {
       min-height: 700px;
     }
+    .data-protection {
+      background-color: #f8f9fa;
+      border-left: 4px solid #009AD5;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0.5rem;
+    }
+    .form-description {
+      background-color: #fff;
+      border: 2px solid #009AD5;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0.5rem;
+    }
   </style>
 </head>
 <body class="font-sans text-gray-800">
@@ -72,9 +86,12 @@
         <button onclick="showForm('turistas-en')" class="form-btn bg-white border-2 border-azul p-6 rounded-lg hover:bg-azul hover:text-white transition group relative">
           <span class="absolute top-2 right-2 w-6 h-4 rounded overflow-hidden shadow" title="English">
             <svg viewBox="0 0 7410 3900" xmlns="http://www.w3.org/2000/svg">
-              <rect width="7410" height="3900" fill="#b22234"/>
-              <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
-              <rect width="2964" height="2100" fill="#3c3b6e"/>
+              <rect width="7410" height="3900" fill="#012169"/>
+              <path d="M0,0 L7410,3900 M7410,0 L0,3900" stroke="#fff" stroke-width="650"/>
+              <clipPath id="uk"><path d="M3705,1950 h3705 v1950 z v1950 h-3705 z h-3705 v-1950 z v-1950 h3705 z"/></clipPath>
+              <path d="M0,0 L7410,3900 M7410,0 L0,3900" clip-path="url(#uk)" stroke="#C8102E" stroke-width="390"/>
+              <path d="M3705,0 v3900 M0,1950 h7410" stroke="#fff" stroke-width="1300"/>
+              <path d="M3705,0 v3900 M0,1950 h7410" stroke="#C8102E" stroke-width="780"/>
             </svg>
           </span>
           <div class="text-4xl mb-3">✈️</div>
@@ -131,6 +148,18 @@
 
         <!-- Empresarios -->
         <div id="form-empresarios" class="form-container hidden">
+          <!-- Protección de Datos -->
+          <div class="data-protection">
+            <h2 class="text-lg font-bold text-azuloscuro mb-3">PROTECCIÓN DE TUS DATOS Y CERTIFICACIÓN DE TU PARTICIPACIÓN</h2>
+            <p class="text-sm text-gray-700 leading-relaxed"><strong>Responsable del tratamiento:</strong> GESPROTUR, S.A.U. MP con NIF A35245786 y dirección electrónica <a href="https://gesprotur.com/" class="text-azul hover:underline" target="_blank">https://gesprotur.com/</a>. <strong>Finalidad:</strong> (i) Desarrollo del proyecto de diagnóstico y análisis participativo de sostenibilidad turística en el territorio, orientado a la elaboración, validación y mejora de una herramienta técnica de apoyo para la toma de decisiones en el sector. (ii) Envío de informes y certificados de participación en caso de aceptación. <strong>Principios aplicados y base legitimadora:</strong> Se aplica el principio de minimización de datos y privacidad desde el diseño de la herramienta, recogiendo únicamente la información imprescindible, lo que significa que no se recopilan datos personales de modo directo, ni se analizan de modo alguno, el único dato personal que puede ser objeto de tratamiento es el vinculado a la IP del dispositivo y el correo electrónico que nos proporcione para recibir el informe de diagnóstico resultante de la herramienta. Las entrevistas realizadas serán conservadas bloqueadas a efectos de justificación del proyecto durante 5 años (i) Interés público. (ii) Consentimiento del interesado. <strong>Destinatarios:</strong> Toda la información será tratada y conservada dentro de los sistemas informáticos de Gesprotur únicamente, no se usan herramientas de análisis Big Data ni Inteligencia Artificial que utilicen o puedan acceder a los datos personales obtenidos en el marco del presente proyecto. <strong>Ejercicio de derechos e información adicional:</strong> <a href="mailto:dpd@gesprotur.com" class="text-azul hover:underline">dpd@gesprotur.com</a>, <a href="https://canariasavanza.com/politica-privacidad/" class="text-azul hover:underline" target="_blank">https://canariasavanza.com/politica-privacidad/</a></p>
+          </div>
+
+          <!-- Descripción del Formulario -->
+          <div class="form-description">
+            <h2 class="text-xl font-bold text-azuloscuro mb-3">CUESTIONARIO EMPRESARIOS</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">Este proyecto tiene como finalidad construir una herramienta digital de diagnóstico de sostenibilidad social en el sector turístico de Canarias, que recoja también la visión de las empresas. Tu participación es clave para conocer cómo se están aplicando principios de sostenibilidad en la gestión, el empleo, la igualdad de oportunidades, la accesibilidad, la vivienda vacacional, la fiscalidad y la responsabilidad social corporativa. Con tu colaboración, podrás solicitar un certificado que reconozca tu aporte al proyecto. Asimismo, al cierre del proceso se compartirá un informe con los resultados agregados, construido a partir de todas las respuestas recibidas. Cuando envíes este formulario, no se recopilarán automáticamente tus datos personales (como nombre o correo electrónico), a menos que decidas proporcionarlos.</p>
+          </div>
+
           <iframe
             id="iframe-empresarios"
             width="100%"
@@ -149,6 +178,18 @@
 
         <!-- Turistas -->
         <div id="form-turistas" class="form-container hidden">
+          <!-- Protección de Datos -->
+          <div class="data-protection">
+            <h2 class="text-lg font-bold text-azuloscuro mb-3">PROTECCIÓN DE TUS DATOS Y CERTIFICACIÓN DE TU PARTICIPACIÓN</h2>
+            <p class="text-sm text-gray-700 leading-relaxed"><strong>Responsable del tratamiento:</strong> GESPROTUR, S.A.U. MP con NIF A35245786 y dirección electrónica <a href="https://gesprotur.com/" class="text-azul hover:underline" target="_blank">https://gesprotur.com/</a>. <strong>Finalidad:</strong> (i) Desarrollo del proyecto de diagnóstico y análisis participativo de sostenibilidad turística en el territorio, orientado a la elaboración, validación y mejora de una herramienta técnica de apoyo para la toma de decisiones en el sector. (ii) Envío de informes y certificados de participación en caso de aceptación. <strong>Principios aplicados y base legitimadora:</strong> Se aplica el principio de minimización de datos y privacidad desde el diseño de la herramienta, recogiendo únicamente la información imprescindible, lo que significa que no se recopilan datos personales de modo directo, ni se analizan de modo alguno, el único dato personal que puede ser objeto de tratamiento es el vinculado a la IP del dispositivo y el correo electrónico que nos proporcione para recibir el informe de diagnóstico resultante de la herramienta. Las entrevistas realizadas serán conservadas bloqueadas a efectos de justificación del proyecto durante 5 años (i) Interés público. (ii) Consentimiento del interesado. <strong>Destinatarios:</strong> Toda la información será tratada y conservada dentro de los sistemas informáticos de Gesprotur únicamente, no se usan herramientas de análisis Big Data ni Inteligencia Artificial que utilicen o puedan acceder a los datos personales obtenidos en el marco del presente proyecto. <strong>Ejercicio de derechos e información adicional:</strong> <a href="mailto:dpd@gesprotur.com" class="text-azul hover:underline">dpd@gesprotur.com</a>, <a href="https://canariasavanza.com/politica-privacidad/" class="text-azul hover:underline" target="_blank">https://canariasavanza.com/politica-privacidad/</a></p>
+          </div>
+
+          <!-- Descripción del Formulario -->
+          <div class="form-description">
+            <h2 class="text-xl font-bold text-azuloscuro mb-3">CUESTIONARIO TURISTAS</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">Este proyecto busca desarrollar una herramienta digital de diagnóstico de sostenibilidad social en el sector turístico de Canarias, recogiendo las percepciones de turistas y visitantes. Tu experiencia como viajero/a es clave para comprender cómo se vive el turismo en las islas, qué fortalezas destacar y qué áreas pueden mejorarse para construir un modelo más sostenible, inclusivo y de calidad. Con tu colaboración, podrás solicitar un certificado que reconozca tu contribución al proyecto. Además, al finalizar el proceso se compartirá un informe con los resultados agregados, elaborado con las respuestas de todas las personas participantes. Cuando envíes este formulario, no se recopilarán automáticamente tus datos personales (como nombre o correo electrónico), a menos que decidas proporcionarlos.</p>
+          </div>
+
           <iframe
             id="iframe-turistas"
             width="100%"
@@ -167,6 +208,18 @@
 
         <!-- Turistas (English) -->
         <div id="form-turistas-en" class="form-container hidden">
+          <!-- Protección de Datos -->
+          <div class="data-protection">
+            <h2 class="text-lg font-bold text-azuloscuro mb-3">PROTECTION OF YOUR DATA AND CERTIFICATION OF YOUR PARTICIPATION</h2>
+            <p class="text-sm text-gray-700 leading-relaxed"><strong>Data Controller:</strong> GESPROTUR, S.A.U. MP with Tax ID A35245786 and electronic address <a href="https://gesprotur.com/" class="text-azul hover:underline" target="_blank">https://gesprotur.com/</a>. <strong>Purpose:</strong> (i) Development of the project for diagnostic and participatory analysis of tourism sustainability in the territory, aimed at the creation, validation, and improvement of a technical support tool for decision-making in the sector. (ii) Sending of reports and participation certificates if accepted. <strong>Applied Principles and Legal Basis:</strong> The principle of data minimization and privacy by design is applied in the tool's development, collecting only essential information, which means that no personal data is collected directly nor analyzed in any way. The only personal data that may be processed are those linked to the IP address of the device and the email address you provide to receive the diagnostic report generated by the tool. Interviews conducted will be stored in a restricted format for project justification purposes for 5 years. (i) Public interest. (ii) Consent of the data subject. <strong>Recipients:</strong> All information will be processed and stored exclusively within Gesprotur's IT systems. No Big Data or Artificial Intelligence tools that use or could access personal data obtained under this project are used. <strong>Exercise of rights and additional information:</strong> <a href="mailto:dpd@gesprotur.com" class="text-azul hover:underline">dpd@gesprotur.com</a>, <a href="https://canariasavanza.com/privacy-policy" class="text-azul hover:underline" target="_blank">https://canariasavanza.com/privacy-policy</a></p>
+          </div>
+
+          <!-- Descripción del Formulario -->
+          <div class="form-description">
+            <h2 class="text-xl font-bold text-azuloscuro mb-3">TOURIST QUESTIONNAIRE</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">This project seeks to develop a digital diagnostic tool for social sustainability in the tourism sector of the Canary Islands, gathering the perceptions of tourists and visitors. Your experience as a traveler is key to understanding how tourism is experienced on the islands, which strengths should be highlighted, and which areas could be improved in order to build a more sustainable, inclusive, and high-quality model. With your collaboration, you may request a certificate acknowledging your contribution to the project. Additionally, once the process is completed, a report with aggregated results will be shared, based on the responses of all participants. When you submit this form, your personal data (such as name or email address) will not be collected automatically, unless you choose to provide it.</p>
+          </div>
+
           <iframe
             id="iframe-turistas-en"
             width="100%"
@@ -185,6 +238,18 @@
 
         <!-- Trabajadores -->
         <div id="form-trabajadores" class="form-container hidden">
+          <!-- Protección de Datos -->
+          <div class="data-protection">
+            <h2 class="text-lg font-bold text-azuloscuro mb-3">PROTECCIÓN DE TUS DATOS Y CERTIFICACIÓN DE TU PARTICIPACIÓN</h2>
+            <p class="text-sm text-gray-700 leading-relaxed"><strong>Responsable del tratamiento:</strong> GESPROTUR, S.A.U. MP con NIF A35245786 y dirección electrónica <a href="https://gesprotur.com/" class="text-azul hover:underline" target="_blank">https://gesprotur.com/</a>. <strong>Finalidad:</strong> (i) Desarrollo del proyecto de diagnóstico y análisis participativo de sostenibilidad turística en el territorio, orientado a la elaboración, validación y mejora de una herramienta técnica de apoyo para la toma de decisiones en el sector. (ii) Envío de informes y certificados de participación en caso de aceptación. <strong>Principios aplicados y base legitimadora:</strong> Se aplica el principio de minimización de datos y privacidad desde el diseño de la herramienta, recogiendo únicamente la información imprescindible, lo que significa que no se recopilan datos personales de modo directo, ni se analizan de modo alguno, el único dato personal que puede ser objeto de tratamiento es el vinculado a la IP del dispositivo y el correo electrónico que nos proporcione para recibir el informe de diagnóstico resultante de la herramienta. Las entrevistas realizadas serán conservadas bloqueadas a efectos de justificación del proyecto durante 5 años (i) Interés público. (ii) Consentimiento del interesado. <strong>Destinatarios:</strong> Toda la información será tratada y conservada dentro de los sistemas informáticos de Gesprotur únicamente, no se usan herramientas de análisis Big Data ni Inteligencia Artificial que utilicen o puedan acceder a los datos personales obtenidos en el marco del presente proyecto. <strong>Ejercicio de derechos e información adicional:</strong> <a href="mailto:dpd@gesprotur.com" class="text-azul hover:underline">dpd@gesprotur.com</a>, <a href="https://canariasavanza.com/politica-privacidad/" class="text-azul hover:underline" target="_blank">https://canariasavanza.com/politica-privacidad/</a></p>
+          </div>
+
+          <!-- Descripción del Formulario -->
+          <div class="form-description">
+            <h2 class="text-xl font-bold text-azuloscuro mb-3">CUESTIONARIO TRABAJADORES</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">El proyecto tiene como finalidad desarrollar una herramienta digital de diagnóstico de sostenibilidad social en el sector turístico de Canarias, integrando la visión de quienes trabajan en el sector. Tu opinión es fundamental para identificar las condiciones laborales, los retos de estabilidad, igualdad, accesibilidad y formación, así como las oportunidades de mejora en el día a día. Con tu colaboración, podrás solicitar un certificado que reconozca tu contribución al proyecto. Además, una vez finalizado el proceso, recibirás un informe con los resultados agregados que recogerá las principales conclusiones a partir de las respuestas. Cuando envíes este formulario, no se recopilarán automáticamente tus datos personales (como nombre o correo electrónico), a menos que decidas proporcionarlos.</p>
+          </div>
+
           <iframe
             id="iframe-trabajadores"
             width="100%"
@@ -203,6 +268,18 @@
 
         <!-- Residentes -->
         <div id="form-residentes" class="form-container hidden">
+          <!-- Protección de Datos -->
+          <div class="data-protection">
+            <h2 class="text-lg font-bold text-azuloscuro mb-3">PROTECCIÓN DE TUS DATOS Y CERTIFICACIÓN DE TU PARTICIPACIÓN</h2>
+            <p class="text-sm text-gray-700 leading-relaxed"><strong>Responsable del tratamiento:</strong> GESPROTUR, S.A.U. MP con NIF A35245786 y dirección electrónica <a href="https://gesprotur.com/" class="text-azul hover:underline" target="_blank">https://gesprotur.com/</a>. <strong>Finalidad:</strong> (i) Desarrollo del proyecto de diagnóstico y análisis participativo de sostenibilidad turística en el territorio, orientado a la elaboración, validación y mejora de una herramienta técnica de apoyo para la toma de decisiones en el sector. (ii) Envío de informes y certificados de participación en caso de aceptación. <strong>Principios aplicados y base legitimadora:</strong> Se aplica el principio de minimización de datos y privacidad desde el diseño de la herramienta, recogiendo únicamente la información imprescindible, lo que significa que no se recopilan datos personales de modo directo, ni se analizan de modo alguno, el único dato personal que puede ser objeto de tratamiento es el vinculado a la IP del dispositivo y el correo electrónico que nos proporcione para recibir el informe de diagnóstico resultante de la herramienta. Las entrevistas realizadas serán conservadas bloqueadas a efectos de justificación del proyecto durante 5 años (i) Interés público. (ii) Consentimiento del interesado. <strong>Destinatarios:</strong> Toda la información será tratada y conservada dentro de los sistemas informáticos de Gesprotur únicamente, no se usan herramientas de análisis Big Data ni Inteligencia Artificial que utilicen o puedan acceder a los datos personales obtenidos en el marco del presente proyecto. <strong>Ejercicio de derechos e información adicional:</strong> <a href="mailto:dpd@gesprotur.com" class="text-azul hover:underline">dpd@gesprotur.com</a>, <a href="https://canariasavanza.com/politica-privacidad/" class="text-azul hover:underline" target="_blank">https://canariasavanza.com/politica-privacidad/</a></p>
+          </div>
+
+          <!-- Descripción del Formulario -->
+          <div class="form-description">
+            <h2 class="text-xl font-bold text-azuloscuro mb-3">CUESTIONARIO RESIDENTES</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">El proyecto tiene como finalidad desarrollar una herramienta digital de diagnóstico de sostenibilidad social en el sector turístico de Canarias, orientada a recoger y analizar las percepciones de distintos actores. La voz de los residentes es fundamental para comprender el impacto real del turismo en la vida cotidiana, la cohesión social y el bienestar comunitario. Tu participación permitirá identificar desafíos y oportunidades desde el territorio, favoreciendo un modelo turístico más equilibrado, participativo y sostenible. Con tu colaboración, podrás además solicitar un certificado que reconozca tu contribución al proyecto. Una vez finalizado el proceso, se remitirá un informe con los resultados agregados, elaborado a partir de todas las respuestas. Cuando envíes este formulario, no se recopilarán automáticamente tus datos personales (como nombre o correo electrónico), a menos que decidas proporcionarlos.</p>
+          </div>
+
           <iframe
             id="iframe-residentes"
             width="100%"
@@ -221,6 +298,18 @@
 
         <!-- Administraciones -->
         <div id="form-administraciones" class="form-container hidden">
+          <!-- Protección de Datos -->
+          <div class="data-protection">
+            <h2 class="text-lg font-bold text-azuloscuro mb-3">PROTECCIÓN DE TUS DATOS Y CERTIFICACIÓN DE TU PARTICIPACIÓN</h2>
+            <p class="text-sm text-gray-700 leading-relaxed"><strong>Responsable del tratamiento:</strong> GESPROTUR, S.A.U. MP con NIF A35245786 y dirección electrónica <a href="https://gesprotur.com/" class="text-azul hover:underline" target="_blank">https://gesprotur.com/</a>. <strong>Finalidad:</strong> (i) Desarrollo del proyecto de diagnóstico y análisis participativo de sostenibilidad turística en el territorio, orientado a la elaboración, validación y mejora de una herramienta técnica de apoyo para la toma de decisiones en el sector. (ii) Envío de informes y certificados de participación en caso de aceptación. <strong>Principios aplicados y base legitimadora:</strong> Se aplica el principio de minimización de datos y privacidad desde el diseño de la herramienta, recogiendo únicamente la información imprescindible, lo que significa que no se recopilan datos personales de modo directo, ni se analizan de modo alguno, el único dato personal que puede ser objeto de tratamiento es el vinculado a la IP del dispositivo y el correo electrónico que nos proporcione para recibir el informe de diagnóstico resultante de la herramienta. Las entrevistas realizadas serán conservadas bloqueadas a efectos de justificación del proyecto durante 5 años (i) Interés público. (ii) Consentimiento del interesado. <strong>Destinatarios:</strong> Toda la información será tratada y conservada dentro de los sistemas informáticos de Gesprotur únicamente, no se usan herramientas de análisis Big Data ni Inteligencia Artificial que utilicen o puedan acceder a los datos personales obtenidos en el marco del presente proyecto. <strong>Ejercicio de derechos e información adicional:</strong> <a href="mailto:dpd@gesprotur.com" class="text-azul hover:underline">dpd@gesprotur.com</a>, <a href="https://canariasavanza.com/politica-privacidad/" class="text-azul hover:underline" target="_blank">https://canariasavanza.com/politica-privacidad/</a></p>
+          </div>
+
+          <!-- Descripción del Formulario -->
+          <div class="form-description">
+            <h2 class="text-xl font-bold text-azuloscuro mb-3">CUESTIONARIO ADMINISTRACIONES PÚBLICAS</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">El proyecto tiene como finalidad desarrollar una herramienta digital de diagnóstico de sostenibilidad social en el sector turístico de Canarias, en la que las administraciones públicas tienen un papel fundamental. Tu opinión permitirá identificar cómo se están gestionando aspectos clave como la vivienda, los procesos participativos, la relación con la comunidad, la fiscalidad, la movilidad o el uso de evidencia en la toma de decisiones. Con tu participación, podrás solicitar un certificado que acredite tu contribución al proyecto. Además, tras el cierre de la recogida de datos se compartirá un informe con los resultados agregados, elaborado a partir de todas las respuestas. Cuando envíes este formulario, no se recopilarán automáticamente tus datos personales (como nombre o correo electrónico), a menos que decidas proporcionarlos.</p>
+          </div>
+
           <iframe
             id="iframe-administraciones"
             width="100%"

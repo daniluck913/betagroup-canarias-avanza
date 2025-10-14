@@ -2,6 +2,7 @@
 const formTitles = {
   empresarios: 'Formulario para Empresarios',
   turistas: 'Formulario para Turistas',
+  'turistas-en': 'Tourist Form',
   trabajadores: 'Formulario para Trabajadores',
   residentes: 'Formulario para Residentes',
   administraciones: 'Formulario para Administraciones Públicas'
