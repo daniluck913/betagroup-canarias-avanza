@@ -32,7 +32,7 @@ function getFooterHTML() {
 <!-- Logos Section -->
 <section class="bg-white py-8">
   <div class="container mx-auto px-6 text-center">
-    <img src="https://canariasavanza.com/wp-content/uploads/2025/09/Recurso-4-2.png" alt="Logos colaboradores" class="mx-auto max-w-full h-auto" />
+    <img src="https://canariasavanza.com/wp-content/uploads/2025/09/GESPROTUR-banner-web-logos.png" alt="Logos colaboradores" class="mx-auto max-w-full h-auto" />
   </div>
 </section>
 
